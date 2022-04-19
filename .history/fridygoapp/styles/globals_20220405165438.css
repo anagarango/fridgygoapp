@@ -1,0 +1,51 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.steps{
+  font-weight:900;
+}
+.donatetext{
+  text-align: start;
+}
+.donatepage{
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+}
+.donatecontent{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  color: #723800;
+  width: 80%;
+  padding-top: 30px;
+}
+
+.homebutton{
+  display:flex;
+  align-self: flex-end;
+  width:80px;
+  height:70px;
+  position: absolute;  
+}
+.rulesfordonations{
+  background-color: rgba(233, 233, 233, 0.6);
+  padding: 20px;
+  border: 7px #8B967A solid;
+  border-radius: 15px;
+}
+
