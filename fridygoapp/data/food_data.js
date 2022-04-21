@@ -18,6 +18,12 @@ export const richm = {
   img:"/richmond.png"
 };
 
+export const surr = {
+  title:"Surrey",
+  route:"sur",
+  img:"/surrey.png"
+};
+
 export const burnImgs = [
   "/tomato.svg",
   "/orange.svg",
@@ -34,6 +40,14 @@ export const dtvanImgs = [
 
 export const richmImgs = [
   "/orange.svg",
+  "/apple.svg",
+  "/potato.svg",
+];
+
+export const surrImgs = [
+  "/bread.svg",
+  "/orange.svg",
+  "/carrot.svg",
   "/apple.svg",
   "/potato.svg",
 ];

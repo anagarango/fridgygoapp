@@ -1,4 +1,3 @@
-//import {useRouter}
 import styled from 'styled-components';
 import {PageHeader, SecondPageHeader, ThirdPageHeader, NormalText, NormalCenteredText, BoldNormalText} from '../../comps/text'; 
 import List, {BoxedContent} from '../../comps/lists';
@@ -7,14 +6,16 @@ import HomeButton from '../../comps/homebutton'
 import{useRouter} from 'next/router';
 import {DispImg} from '../../comps/backgroundimg';
 import FoodItemDisplay, {MapButtons} from '../../comps/food_item';
-import {burn, dtvan, richm, burnImgs, dtvanImgs, richmImgs} from '../../data/food_data'
+import {burn, dtvan, richm, burnImgs, dtvanImgs, richmImgs, surrImgs} from '../../data/food_data'
+import { Gohomebutton } from '../../comps/homebutton';
+import { CenteredDiv } from '../pickarea';
 
-export const Gohomebutton = styled.img`
-    width: 85px;
-    height: 75px;
-    position: absolute;
-    right: 20px
-`
+// export const Gohomebutton = styled.img`
+//     width: 85px;
+//     height: 75px;
+//     position: absolute;
+//     right: 20px
+// `
 export const DonationRules = styled.button`
     font-size: 18px;
     color: white;
@@ -48,23 +49,44 @@ export default function DonatePage(){
 
   return <div class="donatepage">
       <div class="donatecontent">
-      <Gohomebutton src="/homebutton.png" onClick={()=>r.replace({
-      pathname:"/contact",
-      query:{
-        page:1,
-      }
-    })
-  }></Gohomebutton>
-    <PageHeader>Donate</PageHeader>
-    <NormalCenteredText>Help out someone in need from your community by visiting one of your near fridges in 4 easy steps.</NormalCenteredText>
-    <NormalText><BoldNormalText>Step 1:</BoldNormalText>Pick a Location</NormalText>
-    <NormalText><BoldNormalText>Step 2:</BoldNormalText>See the container below the map to see what items are needed for the fridge</NormalText>
+      <HomeButton></HomeButton>
+      <PageHeader> </PageHeader>
+      {/* <NormalCenteredText>Help out someone in need from your community by visiting one of your near fridges in 4 easy steps.</NormalCenteredText> */}
+      <CenteredDiv>
         <FoodContainer>
-          <SecondPageHeader>Choose A Location</SecondPageHeader>
-          <ButtonContainer>
+          <SecondPageHeader>Choose A Fridge Location</SecondPageHeader>
+              {type === 'bur' && <div>
+                Burnaby Food Items
+                <FoodItemDisplay arr={burnImgs}></FoodItemDisplay>
+                </div>  
+              }
+              {type === 'van' && <div>
+                Downtown Vancouver Items
+                <FoodItemDisplay arr={dtvanImgs}></FoodItemDisplay>
+                </div>  
+              }
+              {type === 'rich' && <div>
+                Richmond Items
+                <FoodItemDisplay arr={richmImgs}></FoodItemDisplay>
+                </div>  
+              }
+              {type === 'sur' && <div>
+                Surrey Items
+                <FoodItemDisplay arr={surrImgs}></FoodItemDisplay>
+                </div>  
+              }
+
+              <DonationRules src="/homebutton.png" onClick={()=>r.replace({
+        pathname:"/pickarea",
+        query:{
+          page:1,
+        }
+      })
+    }>Go Back</DonationRules>
+          {/* <ButtonContainer>
             <MapButtons src={burn.img} onClick={
               ()=>r.replace({
-                // pathname:"/donate",
+                pathname:"/donate",
                 query:{
                   type:burn.route
                 }
@@ -74,7 +96,7 @@ export default function DonatePage(){
 
             <MapButtons src={dtvan.img} onClick={
               ()=>r.replace({
-                // pathname:"/donate",
+                pathname:"/donate",
                 query:{
                   type:dtvan.route
                 }
@@ -84,40 +106,16 @@ export default function DonatePage(){
 
             <MapButtons src={richm.img} onClick={
               ()=>r.replace({
-                // pathname:"/donate",
+                pathname:"/donate",
                 query:{
                   type:richm.route
                 }
               })
             }>
             </MapButtons>
-          </ButtonContainer>
-
-          {type === 'bur' && <div>
-            Burnaby Food Items
-            <FoodItemDisplay arr={burnImgs}></FoodItemDisplay>
-            </div>  
-          }
-          {type === 'van' && <div>
-            Downtown Vancouver Items
-            <FoodItemDisplay arr={dtvanImgs}></FoodItemDisplay>
-            </div>  
-          }
-          {type === 'rich' && <div>
-            Richmond Items
-            <FoodItemDisplay arr={richmImgs}></FoodItemDisplay>
-            </div>  
-          }
+          </ButtonContainer> */}
         </FoodContainer>
-    <NormalText><BoldNormalText>Step 3:</BoldNormalText>Check our rules by following the button below to review our list of accepted and non-accepted items</NormalText>
-    <DonationRules src="/homebutton.png" onClick={()=>r.replace({
-      pathname:"/rules",
-      query:{
-        page:1,
-      }
-    })
-  }>Donation Rules</DonationRules>
-
+      </CenteredDiv>
     </div>
   </div>
 }
