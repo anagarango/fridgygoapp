@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 import {PageHeader, SecondPageHeader, ThirdPageHeader, NormalText, NormalCenteredText, BoldNormalText} from '../../comps/text'; 
-import List, {BoxedContent} from '../../comps/lists';
-import {acceptedList, notAcceptedList} from '../../data/donatelists';
 import HomeButton from '../../comps/homebutton'
 import{useRouter} from 'next/router';
-import {DispImg} from '../../comps/backgroundimg';
-import FoodItemDisplay, {MapButtons} from '../../comps/food_item';
+import FoodItemDisplay from '../../comps/food_item';
 import {burn, dtvan, richm, burnImgs, dtvanImgs, richmImgs, surrImgs} from '../../data/food_data'
-import { Gohomebutton } from '../../comps/homebutton';
 import { CenteredDiv } from '../pickarea';
+import GoBack from '../../comps/changelocation';
 
 // export const Gohomebutton = styled.img`
 //     width: 85px;
@@ -16,7 +13,7 @@ import { CenteredDiv } from '../pickarea';
 //     position: absolute;
 //     right: 20px
 // `
-export const DonationRules = styled.button`
+export const ChangePage = styled.button`
     font-size: 18px;
     color: white;
     background-color: #ED9251;
@@ -76,44 +73,20 @@ export default function DonatePage(){
                 </div>  
               }
 
-              <DonationRules src="/homebutton.png" onClick={()=>r.replace({
-        pathname:"/pickarea",
+              <ChangePage src="/homebutton.png" onClick={()=>r.replace({
+              pathname:"/pickarea",
+              query:{
+                page:1,
+              }
+            })
+          }>Go Back</ChangePage>
+          <ChangePage src="/homebutton.png" onClick={()=>r.replace({
+        pathname:"/rules",
         query:{
           page:1,
         }
       })
-    }>Go Back</DonationRules>
-          {/* <ButtonContainer>
-            <MapButtons src={burn.img} onClick={
-              ()=>r.replace({
-                pathname:"/donate",
-                query:{
-                  type:burn.route
-                }
-              })
-            }>
-            </MapButtons>
-
-            <MapButtons src={dtvan.img} onClick={
-              ()=>r.replace({
-                pathname:"/donate",
-                query:{
-                  type:dtvan.route
-                }
-              })
-            }>
-            </MapButtons>
-
-            <MapButtons src={richm.img} onClick={
-              ()=>r.replace({
-                pathname:"/donate",
-                query:{
-                  type:richm.route
-                }
-              })
-            }>
-            </MapButtons>
-          </ButtonContainer> */}
+    }>Donation Rules</ChangePage>
         </FoodContainer>
       </CenteredDiv>
     </div>

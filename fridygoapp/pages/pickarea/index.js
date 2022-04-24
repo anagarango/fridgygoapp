@@ -4,6 +4,7 @@ import{useRouter} from 'next/router';
 import FoodItemDisplay, {MapButtons} from '../../comps/food_item';
 import {burn, dtvan, richm, surr} from '../../data/food_data';
 import HomeButton, {Gohomebutton} from '../../comps/homebutton';
+// import { CenteredDiv, FoodContainer, ButtonContainer } from '../../comps/donatecontainer';
 
 const FoodContainer = styled.div`
   width:500px;
