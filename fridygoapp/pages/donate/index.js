@@ -12,6 +12,7 @@ import { CenteredDiv } from '../pickarea';
 import DisplayMap from '../../comps/map';
 import MapPoint from '../../comps/mappoint';
 import { PointImg } from '../../comps/map';
+import { pointOne } from '../../data/mapPoint_data';
 
 // export const Gohomebutton = styled.img`
 //     width: 85px;
@@ -62,17 +63,25 @@ export default function DonatePage(){
               {type === 'bur' && <div>
                 Burnaby Food Items
                 <DisplayMap img="/burnabyMap.png"></DisplayMap>
+                <MapPoint img = "/map-point.svg" onClick={
+                  ()=>r.replace({
+                    pathname:"/donate",
+                    query:{
+                      type:pointOne.route
+                    }
+                  })
+                }></MapPoint>
+                </div>  
+              }
+              {/* <CreatorName onClickImg={()=>alert('hi')} /> */}
+              {type === 'loc1' && <div>
+              Burnaby Food Items
+                <DisplayMap img="/burnabyMap.png"></DisplayMap>
                 <MapPoint img = "/map-point.svg"></MapPoint>
                 <BoldNormalText>Location:</BoldNormalText><NormalText>729 E 16th Ave, Vancouver</NormalText><br/>
                 <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-643-9172</NormalText><br/>
                 <BoldNormalText>Needed Food Items:</BoldNormalText>
                 <FoodItemDisplay arr={burnImgs}></FoodItemDisplay>
-                </div>  
-              }
-              {type === 'van' && <div>
-                Downtown Vancouver Items
-                <DisplayMap></DisplayMap>
-                <FoodItemDisplay arr={dtvanImgs}></FoodItemDisplay>
                 </div>  
               }
               {type === 'rich' && <div>

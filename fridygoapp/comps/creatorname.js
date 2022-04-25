@@ -14,9 +14,13 @@ const CreatorImage = styled.img`
 // `;
 
 
-export default function CreatorName({txt=["Item#1", "Item#2", "Item#3"]}, {img="/donatebackground.svg"}, ){
+export default function CreatorName({
+    txt=["Item#1", "Item#2", "Item#3"],
+    img="/donatebackground.svg",
+    onClickImg=()=>{}
+}){
     return <div>
-    <CreatorImage src={img}></CreatorImage>
+    <CreatorImage onClick={onClickImg} src={img}></CreatorImage>
     <ThirdPageHeader>{txt}</ThirdPageHeader>
     </div>
 }

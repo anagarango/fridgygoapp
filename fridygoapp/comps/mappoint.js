@@ -10,7 +10,8 @@ top: 400px;
 
 export default function MapPoint({
     img = "/map-point.svg",
+    onClick=()=>{}
 }){
 
-    return<PointImg src={img}></PointImg>
+    return<PointImg onClick={onClick} src={img}></PointImg>
 }
