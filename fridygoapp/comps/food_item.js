@@ -9,7 +9,9 @@ const FoodList = styled.div`
     display:flex;
     width: 460px;
     height: 100px;
-    overflow-y: scroll
+    overflow-y: scroll;
+    margin-top: 20px;
+    margin-bottom: 20px;
 `
 export const MapButtons = styled.img`
     width:180px;

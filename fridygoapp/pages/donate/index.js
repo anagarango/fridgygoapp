@@ -9,6 +9,9 @@ import FoodItemDisplay, {MapButtons} from '../../comps/food_item';
 import {burn, dtvan, richm, burnImgs, dtvanImgs, richmImgs, surrImgs} from '../../data/food_data'
 import { Gohomebutton } from '../../comps/homebutton';
 import { CenteredDiv } from '../pickarea';
+import DisplayMap from '../../comps/map';
+import MapPoint from '../../comps/mappoint';
+import { PointImg } from '../../comps/map';
 
 // export const Gohomebutton = styled.img`
 //     width: 85px;
@@ -16,6 +19,7 @@ import { CenteredDiv } from '../pickarea';
 //     position: absolute;
 //     right: 20px
 // `
+
 export const DonationRules = styled.button`
     font-size: 18px;
     color: white;
@@ -57,21 +61,29 @@ export default function DonatePage(){
           <SecondPageHeader>Choose A Fridge Location</SecondPageHeader>
               {type === 'bur' && <div>
                 Burnaby Food Items
+                <DisplayMap img="/burnabyMap.png"></DisplayMap>
+                <MapPoint img = "/map-point.svg"></MapPoint>
+                <BoldNormalText>Location:</BoldNormalText><NormalText>729 E 16th Ave, Vancouver</NormalText><br/>
+                <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-643-9172</NormalText><br/>
+                <BoldNormalText>Needed Food Items:</BoldNormalText>
                 <FoodItemDisplay arr={burnImgs}></FoodItemDisplay>
                 </div>  
               }
               {type === 'van' && <div>
                 Downtown Vancouver Items
+                <DisplayMap></DisplayMap>
                 <FoodItemDisplay arr={dtvanImgs}></FoodItemDisplay>
                 </div>  
               }
               {type === 'rich' && <div>
                 Richmond Items
+                <DisplayMap img="/richmondMap.png"></DisplayMap>
                 <FoodItemDisplay arr={richmImgs}></FoodItemDisplay>
                 </div>  
               }
               {type === 'sur' && <div>
                 Surrey Items
+                <DisplayMap img="/surreyMap.png"></DisplayMap>
                 <FoodItemDisplay arr={surrImgs}></FoodItemDisplay>
                 </div>  
               }

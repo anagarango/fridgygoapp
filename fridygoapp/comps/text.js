@@ -17,11 +17,11 @@ export const NormalCenteredText = styled.p`
 `
 export const NormalText = styled.p`
     color: #723800;
-    text-align: start;
+    // text-align: start;
 `
 export const BoldNormalText = styled.span`
     color: #723800;
-    text-align: start;
+    text-align: left;
     font-weight:800;
     padding-right:5px
 `
