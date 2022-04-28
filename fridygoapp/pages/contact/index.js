@@ -6,16 +6,18 @@ import {Gohomebutton, DonationRules} from '../donate/index';
 import{useRouter} from 'next/router';
 // import CreatorName, {BoxedContent} from '../../comps/lists';
 import {phoneNumbers} from '../../data/donatelists';
-import {DispImg} from '../../comps/backgroundimg';
-import {ana, ren, eli} from '../../data/creator_data'
+import {ana, ren, eli} from '../../data/creator_data';
+import HomeButton from '../../comps/homebutton'
+import GoBack from '../../comps/changelocation';
+import { MovePage } from '../../comps/changelocation';
 
-export const NormalText = styled.span`
+const NormalText = styled.span`
     color: #723800;
     font-weight: 400;
     text-align: start;
     padding-left: 10px
 `
-export const ThirdPageHeader = styled.h3`
+const ThirdPageHeader = styled.h3`
     text-align: start;
     color: #723800;
 `
@@ -26,13 +28,7 @@ export default function ContactPage(){
 
   return <div class="donatepage">
       <div class="donatecontent">
-      <Gohomebutton src="/homebutton.png" onClick={()=>r.replace({
-      pathname:"/contact",
-      query:{
-        page:1,
-      }
-    })
-  }></Gohomebutton>
+      <HomeButton></HomeButton>
       <PageHeader>Contact Us</PageHeader>
       <SecondPageHeader>Phone Numbers</SecondPageHeader>
       <ThirdPageHeader>FoodBank:<NormalText>604-535-2423</NormalText></ThirdPageHeader>
@@ -42,13 +38,22 @@ export default function ContactPage(){
       <CreatorName txt={ana.title} img={ana.img}></CreatorName>
       <CreatorName txt={ren.title} img={ren.img}></CreatorName>
       <CreatorName txt={eli.title} img={eli.img}></CreatorName>
-      <DonationRules src="/homebutton.png" onClick={()=>r.replace({
-      pathname:"/donate",
-      query:{
-        page:1,
-      }
-    })
-  }>Donation Rules</DonationRules>
+      {/* <GoBack text="TRYING TO MAKE THIS BUTTON WORK"></GoBack> */}
+      <MovePage src="/homebutton.png" onClick={()=>r.replace({
+        pathname:"/pickarea",
+        query:{
+          page:1,
+        }
+      })
+    }>Pick Area Page</MovePage>
       </div>
   </div>
 }
+
+{/* <Gohomebutton src="/homebutton.png" onClick={()=>r.replace({
+  pathname:"/contact",
+  query:{
+    page:1,
+  }
+  })
+}></Gohomebutton> */}

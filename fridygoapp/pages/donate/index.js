@@ -21,7 +21,7 @@ import { pointOne } from '../../data/mapPoint_data';
 //     right: 20px
 // `
 
-export const DonationRules = styled.button`
+export const ChangePage = styled.button`
     font-size: 18px;
     color: white;
     background-color: #ED9251;
@@ -30,6 +30,7 @@ export const DonationRules = styled.button`
     border-radius: 10px;
     width: 170px;
     height: 65px;
+    margin: 15px;
 `
 const FoodContainer = styled.div`
   width:500px;
@@ -97,13 +98,20 @@ export default function DonatePage(){
                 </div>  
               }
 
-              <DonationRules src="/homebutton.png" onClick={()=>r.replace({
-        pathname:"/pickarea",
+<ChangePage src="/homebutton.png" onClick={()=>r.replace({
+              pathname:"/pickarea",
+              query:{
+                page:1,
+              }
+            })
+          }>Go Back</ChangePage>
+    <ChangePage src="/homebutton.png" onClick={()=>r.replace({
+        pathname:"/rules",
         query:{
           page:1,
         }
       })
-    }>Go Back</DonationRules>
+    }>Donation Rules</ChangePage>
           {/* <ButtonContainer>
             <MapButtons src={burn.img} onClick={
               ()=>r.replace({

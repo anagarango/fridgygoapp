@@ -8,7 +8,7 @@ import{useRouter} from '../node_modules/next/router';
 //     width: 75px;
 //     height: 85px
 // `
-export const Gohomebutton = styled.img`
+const Gohomebutton = styled.img`
     width: 85px;
     height: 75px;
     position: absolute;
@@ -16,12 +16,13 @@ export const Gohomebutton = styled.img`
 `
 
 export default function HomeButton(){
+  const r = useRouter();
    return <Gohomebutton src="/homebutton.png" onClick={
         ()=>r.replace({
           pathname:"/contact",
-          query:{
-            page:1,
-          }
+          // query:{
+          //   page:1,
+          // }
         })
       }></Gohomebutton>
 }
