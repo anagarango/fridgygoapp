@@ -12,7 +12,8 @@ const Gohomebutton = styled.img`
     width: 85px;
     height: 75px;
     position: absolute;
-    right: 20px
+    right: 20px;
+    top:10px
 `
 
 export default function HomeButton(){
