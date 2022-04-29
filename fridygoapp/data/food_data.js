@@ -25,29 +25,33 @@ export const surr = {
 };
 
 export const burnImgs = [
-  "/tomato.svg",
-  "/orange.svg",
-  "/milk.svg",
-  "/carrot.svg",
-  "/bread.svg",
-  "/potato.svg",
+  "Tomatoes",
+  "Oranges",
+  "Milk",
+  "Carrots",
+  "Bread",
+  "Potatoes",
+  "Cheese"
 ];
 
 export const dtvanImgs = [
-    "/apple.svg",
-    "/tomato.svg",
+  "Apples",
+  "Tomatoes",
+  "Milk"
 ];
 
 export const richmImgs = [
-  "/orange.svg",
-  "/apple.svg",
-  "/potato.svg",
+  "Oranges",
+  "Apples",
+  "Potatoes",
+  "Carrots"
 ];
 
 export const surrImgs = [
-  "/bread.svg",
-  "/orange.svg",
-  "/carrot.svg",
-  "/apple.svg",
-  "/potato.svg",
+  "Bread",
+  "Oranges",
+  "Carrots",
+  "Apples",
+  "Potatoes",
+  "Cheese"
 ];

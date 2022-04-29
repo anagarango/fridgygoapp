@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 export const PageHeader = styled.h1`
     text-align: center;
-    color: #723800
+    color: #723800;
+    margin: 35px 0px
 `
 export const SecondPageHeader = styled.h2`
     text-align: center;
@@ -25,3 +26,15 @@ export const BoldNormalText = styled.span`
     font-weight:800;
     padding-right:5px
 `
+
+export const BoxedContentButtons = styled.h3`
+    background-color: ${props=>props.bg || "rgba(233, 233, 233, 0.9)"};
+    border: 7px #8B967A solid;
+    width: 50%;
+    height: 75px;
+    border-radius: 15px 15px 0px 0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: #723800;
+`;
