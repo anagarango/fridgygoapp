@@ -41,6 +41,25 @@ li {
   min-height: 100vh;
 }
 
+.howitworksPage{
+  background-image: url("/donatebackground.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.hiw_content{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: #723800;
+  width: 85%;
+  padding: 40px 0px;
+  min-height: 100vh;
+}
+
 .homebutton{
   display:flex;
   align-self: flex-end;

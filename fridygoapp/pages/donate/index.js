@@ -61,40 +61,61 @@ export default function DonatePage(){
       <CenteredDiv>
         <FoodContainer>
           <SecondPageHeader>Choose A Fridge Location</SecondPageHeader>
-              {type === 'bur' && <div>
-                Burnaby Food Items
-                <DisplayMap img="/burnabyMap.png"></DisplayMap>
-                <MapPoint img = "/map-point.svg" onClick={
-                  ()=>r.replace({
-                    pathname:"/donate",
-                    query:{
-                      type:pointOne.route
-                    }
-                  })
-                }></MapPoint>
-                </div>  
-              }
-              {/* <CreatorName onClickImg={()=>alert('hi')} /> */}
-              {type === 'loc1' && <div>
+
+              {type === 'loc1' && 
+              <div>
               Burnaby Food Items
                 <DisplayMap img="/burnabyMap.png"></DisplayMap>
-                <MapPoint img = "/map-point.svg"></MapPoint>
-                <BoldNormalText>Location:</BoldNormalText><NormalText>729 E 16th Ave, Vancouver</NormalText><br/>
+                {/* <MapPoint img = "/map-point.svg"></MapPoint> */}
+                <BoldNormalText>Location:</BoldNormalText><NormalText>729 Nanaimo Ave, Burnaby</NormalText><br/>
                 <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-643-9172</NormalText><br/>
                 <BoldNormalText>Needed Food Items:</BoldNormalText>
                 <FoodItemDisplay arr={burnImgs}></FoodItemDisplay>
                 </div>  
               }
+              {type === 'loc2' && 
+              <div>
+              Burnaby Food Items
+                <DisplayMap img="/burnabyMap.png"></DisplayMap>
+                {/* <MapPoint img = "/map-point.svg"></MapPoint> */}
+                <BoldNormalText>Location:</BoldNormalText><NormalText>322 Willington Ave, Burnaby</NormalText><br/>
+                <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-773-9473</NormalText><br/>
+                <BoldNormalText>Needed Food Items:</BoldNormalText>
+                <FoodItemDisplay arr={dtvanImgs}></FoodItemDisplay>
+                </div>  
+              }
+              {type === 'loc3' && 
+              <div>
+              Burnaby Food Items
+                <DisplayMap img="/burnabyMap.png"></DisplayMap>
+                {/* <MapPoint img = "/map-point.svg"></MapPoint> */}
+                <BoldNormalText>Location:</BoldNormalText><NormalText>Metrotown, Burnaby</NormalText><br/>
+                <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-654-2453</NormalText><br/>
+                <BoldNormalText>Needed Food Items:</BoldNormalText>
+                <FoodItemDisplay arr={richmImgs}></FoodItemDisplay>
+                </div>  
+              }
+
+                {type === 'bur' && <div>
+                   Vancouver Items
+                  <DisplayMap img="/burnabyMap.png"></DisplayMap>
+                </div>  
+              }
+
+              {type === 'van' && <div>
+                   Vancouver Items
+                  <DisplayMap img="/vancouver.png"></DisplayMap>
+                </div>  
+              }
+
               {type === 'rich' && <div>
                 Richmond Items
                 <DisplayMap img="/richmondMap.png"></DisplayMap>
-                <FoodItemDisplay arr={richmImgs}></FoodItemDisplay>
                 </div>  
               }
               {type === 'sur' && <div>
                 Surrey Items
                 <DisplayMap img="/surreyMap.png"></DisplayMap>
-                <FoodItemDisplay arr={surrImgs}></FoodItemDisplay>
                 </div>  
               }
 

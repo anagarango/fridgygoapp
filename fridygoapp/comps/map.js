@@ -1,42 +1,63 @@
 import styled from 'styled-components';
+import MapPoint from './mappoint';
+import{useRouter} from 'next/router';
+import { pointOne, pointTwo, pointThree } from '../data/mapPoint_data';
+
+
 
 export const MapImg = styled.img`
 width: 450px;
 height: 400px;
 padding: 25px 12px 10px 12px;
 `
-
-// const PointImg = styled.img`
-// width: 100px;
-// height: 100px;
-// position: absolute;
-// left: 50px;
-// top: 50px;
-// `
-// export const PointImg = styled.img`
-// width: 50px;
-// height: 50px;
-// position: relative;
-// left: 50px;
-// top: 50px;
-// `
-
-// export function MapPoint({
-//     img = "/map-point.svg",
-// }){
-
-//     return<PointImg src={img}></PointImg>
-// }
+export const MapDiv = styled.div`
+width: 460px;
+height: 410px;
+`
 
 
 export default function DisplayMap({
     img="/mapImage.png",
 }){
 
-    return <MapImg src={img}>
-        {/* <PointImg src={point}>
-        </PointImg> */}
-    </MapImg>
+    const r = useRouter();
+    const {type} = r.query;
+
+    return <MapDiv><MapImg src={img}></MapImg>
+    
+    <MapPoint img = "/map-point.svg" left="-50px" top="-300px"
+    onClick={console.log("renata")} 
+    onClickPoint={
+        ()=>r.replace({
+          pathname:"/donate",
+          query:{
+            type:pointOne.route
+          }
+        })
+        
+      }></MapPoint>
+      <MapPoint img = "/map-point.svg" left="0px" top="-150px"
+    onClickPoint={
+        ()=>r.replace({
+          pathname:"/donate",
+          query:{
+            type:pointTwo.route
+          }
+        })
+        
+      }></MapPoint>
+      <MapPoint img = "/map-point.svg" left="0px" top="-270px"
+    onClickPoint={
+        ()=>r.replace({
+          pathname:"/donate",
+          query:{
+            type:pointThree.route
+          }
+        })
+        
+      }></MapPoint>
+
+      </MapDiv>
 }
 
 

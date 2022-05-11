@@ -3,15 +3,17 @@ import styled from 'styled-components';
 const PointImg = styled.img`
 width: 120px;
 height: 120px;
-position: absolute;
-left: 250px;
-top: 400px;
+position: relative;
+left: ${props=>props.left || "-100px"};
+top: ${props=>props.top || "-200px"};
 `
 
 export default function MapPoint({
     img = "/map-point.svg",
-    onClick=()=>{}
+    onClickPoint=()=>{}, 
+    left = "-100px",
+    top = "-200px"
 }){
 
-    return<PointImg onClick={onClick} src={img}></PointImg>
+    return<PointImg onClick={onClickPoint} src={img} left={left} top={top}></PointImg>
 }
