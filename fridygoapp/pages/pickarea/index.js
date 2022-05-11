@@ -1,56 +1,26 @@
-import styled from 'styled-components';
-import {PageHeader, SecondPageHeader, NormalText, BoldNormalText} from '../../comps/text'; 
+import {PageHeader, SecondPageHeader} from '../../comps/text'; 
 import{useRouter} from 'next/router';
 import FoodItemDisplay, {MapButtons} from '../../comps/food_item';
 import {burn, dtvan, richm, surr} from '../../data/food_data';
-import HomeButton, {Gohomebutton} from '../../comps/homebutton';
+import HomeButton from '../../comps/homebutton';
+import { WholePage, FoodContainer, ButtonContainer } from '../../comps/donatecontainer';
 
-const FoodContainer = styled.div`
-  width:500px;
-  height:fit-content;
-  padding:20px;
-  background-color: white;
-  border-radius: 10px;
-`
-const ButtonContainer = styled.div`
-  width:480px;
-  height:fit-content;
-  padding:20px;
-  background-color: white;
-  border-radius: 10px;
-  display:flex;
-  flex-wrap: wrap;
-`
-
- export const CenteredDiv = styled.div`
-    display:flex;
-    justify-content: center
-`
 
 export default function DonatePage(){
     const r = useRouter();
     const {type} = r.query;
   
-    return <div class="donatepage">
-        <div class="donatecontent">
-        {/* <Gohomebutton src="/homebutton.png" onClick={()=>r.replace({
-        pathname:"/contact",
-        query:{
-          page:1,
-        }
-      })
-    }></Gohomebutton> */}
-        <HomeButton></HomeButton>
-      <PageHeader> </PageHeader>
-      <CenteredDiv>
+    return <WholePage>
+      <HomeButton></HomeButton>
+      <PageHeader>Donate</PageHeader>
           <FoodContainer>
             <SecondPageHeader>Choose A Location</SecondPageHeader>
             <ButtonContainer>
               <MapButtons src={burn.img} onClick={
-                ()=>r.replace({
+                ()=>r.push({
                   pathname:"/donate",
                   query:{
-                    type:burn.route
+                    type:burn.route,
                   }
                 })
               }>
@@ -88,7 +58,7 @@ export default function DonatePage(){
   
             {type === 'bur' && <div>
               Burnaby Food Items
-              <FoodItemDisplay arr={burnImgs}></FoodItemDisplay>
+              <FoodItemDisplay arr={burnImgs} names={burnImgs}></FoodItemDisplay>
               </div>  
             }
             {type === 'van' && <div>
@@ -102,15 +72,5 @@ export default function DonatePage(){
               </div>  
             }
           </FoodContainer>
-        </CenteredDiv>
-      {/* <DonationRules src="/homebutton.png" onClick={()=>r.replace({
-        pathname:"/rules",
-        query:{
-          page:1,
-        }
-      })
-    }>Donation Rules</DonationRules> */}
-
-      </div>
-    </div>
+    </WholePage>
   }

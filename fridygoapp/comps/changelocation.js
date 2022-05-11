@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import{useRouter} from '../node_modules/next/router';
+<<<<<<< HEAD
  export const MovePage = styled.button`
     font-size: 18px;
     color: white;
@@ -19,4 +20,15 @@ export default function GoBack({text="Enter Here"}, {move="/contact"}){
           pathname:{move},
         })
       }>{text}</MovePage>
+=======
+import { ChangePage } from '../pages/donate';
+
+export default function GoBack({text="Enter Here", move="/contact"}){
+  const r = useRouter();
+   return <ChangePage onClick={
+        ()=>r.replace({
+          pathname:{move}
+        })
+      }>{text}</ChangePage>
+>>>>>>> aef6f794bd770ce5f7108c7524bb58f5131d6b56
 }
