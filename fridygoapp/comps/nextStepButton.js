@@ -1,61 +1,41 @@
 import styled from 'styled-components';
 import{useRouter} from '../node_modules/next/router';
 
-const Gohomebutton = styled.img`
-    width: 85px;
-    height: 75px;
-    position: absolute;
-    right: 20px
-`
-
-export default function HomeButton(){
-  const r = useRouter();
-   return <Gohomebutton src="/homebutton.png" onClick={
-        ()=>r.replace({
-          pathname:"/contact",
-          // query:{
-          //   page:1,
-          // }
-        })
-      }></Gohomebutton>
-}
 
 
-
-
-export const MovePage = styled.button`
+export const NextStepButton = styled.button`
 font-size: 18px;
-color: white;
-background-color: #ED9251;
+color: ${props=>props.color || "#FFFFFF"};
+background-color: ${props=>props.backgroundColor || "#ED9251;"};
 font-weight: 700;
 border: 0px;
 border-radius: 10px;
-width: 170px;
-height: 65px;
-padding: 25px;
-`
-
-export const NextButton = styled.button`
-font-size: 18px;
-color: white;
-background-color: #ED9251;
-font-weight: 700;
-border: 0px;
-border-radius: 10px;
-width: 170px;
-height: 65px;
-padding: 25px;
+width: ${props=>props.width || "170px"};
+height: 50px;
 box-shadow: 0px 4px 4px 0px #00000040;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 30px;
 `
 
-export default function GoBack({text="Enter Here"}, {move="/contact"}){
-const r = useRouter();
-return <MovePage onClick={
-    ()=>r.replace({
-      pathname:{move},
-    })
-  }>{text}</MovePage>
-}
+{/* <ChangePage onClick={()=>r.replace({
+  pathname:"/rules",
+  query:{
+    type:type
+  }
+})
+}>Fridge Donation Rules</ChangePage>
+
+<MapButtons src={burn.img} onClick={
+  ()=>r.push({
+    pathname:"/donate",
+    query:{
+      type:burn.route,
+    }
+  })
+}>
+</MapButtons>
 
 
 export default function NextStep({query = "/1step"}){
@@ -65,4 +45,4 @@ export default function NextStep({query = "/1step"}){
             query: {query}
         })
     } ></NextButton>
-}
+} */}

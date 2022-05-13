@@ -16,8 +16,8 @@ export const ThirdPageHeader = styled.h3`
 export const FifthPageHeader = styled.span`
     text-align: center;
     color: #723800;
-    font-size: 46px;
-    font-weight: bold;
+    font-size: ${props=>props.size|| "46px"};
+    font-weight: ${props=>props.weight || "bold"};
 `
 
 
@@ -31,6 +31,20 @@ export const NormalText = styled.p`
     padding-right: 20px;
     // text-align: start;
 `
+
+export const WhiteText = styled.p`
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px #00000040;
+    font-weight: 800;
+    width: ${props=>props.width || "100px"};
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    left: ${props=>props.left || "100px"};
+    top: ${props=>props.top || "100px"};
+`
+
+
 export const BoldNormalText = styled.span`
     color: #723800;
     text-align: left;

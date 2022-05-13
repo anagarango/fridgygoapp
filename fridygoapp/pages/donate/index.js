@@ -13,6 +13,9 @@ import { CenteredButtonDivs, ChangePage, CenteredDiv, CenteredDivDonate , FoodCo
 export default function DonatePage(){
   const r = useRouter();
   const {type} = r.query;
+  const {mappoint} = r.query;
+  //сделать еще один тайп и потом если тайп равен этому и сити этому то делай это
+
 
   return <WholePage>
       <HomeButton></HomeButton>
@@ -22,33 +25,31 @@ export default function DonatePage(){
         <FoodContainerDonate>
           <SecondPageHeader>Choose A Fridge Location</SecondPageHeader>
 
-              {type === 'loc1' && 
+              {mappoint === 'loc1' && 
               <CenteredDiv>
+                {/* {data[city][type].header} */}
               Burnaby Food Items
                 <DisplayMap img="/burnabyMap.png"></DisplayMap>
-                {/* <MapPoint img = "/map-point.svg"></MapPoint> */}
                 <BoldNormalText>Location:</BoldNormalText><NormalText>729 Nanaimo Ave, Burnaby</NormalText><br/>
                 <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-643-9172</NormalText><br/>
                 <BoldNormalText>Needed Food Items:</BoldNormalText>
                 <FoodItemDisplay arr={burnImgs}></FoodItemDisplay>
                 </CenteredDiv>  
               }
-              {type === 'loc2' && 
+              {mappoint === 'loc2' && 
               <CenteredDiv>
               Burnaby Food Items
                 <DisplayMap img="/burnabyMap.png"></DisplayMap>
-                {/* <MapPoint img = "/map-point.svg"></MapPoint> */}
                 <BoldNormalText>Location:</BoldNormalText><NormalText>322 Willington Ave, Burnaby</NormalText><br/>
                 <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-773-9473</NormalText><br/>
                 <BoldNormalText>Needed Food Items:</BoldNormalText>
                 <FoodItemDisplay arr={dtvanImgs}></FoodItemDisplay>
                 </CenteredDiv>  
               }
-              {type === 'loc3' && 
+              {mappoint === 'loc3' && 
               <CenteredDiv>
               Burnaby Food Items
                 <DisplayMap img="/burnabyMap.png"></DisplayMap>
-                {/* <MapPoint img = "/map-point.svg"></MapPoint> */}
                 <BoldNormalText>Location:</BoldNormalText><NormalText>Metrotown, Burnaby</NormalText><br/>
                 <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-654-2453</NormalText><br/>
                 <BoldNormalText>Needed Food Items:</BoldNormalText>
@@ -64,7 +65,7 @@ export default function DonatePage(){
 
               {type === 'van' && <CenteredDiv>
                    Vancouver Items
-                  <DisplayMap img="/vancouver.png"></DisplayMap>
+                  <DisplayMap img="/mapImage.png"></DisplayMap>
                 </CenteredDiv>  
               }
 

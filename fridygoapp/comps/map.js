@@ -4,7 +4,6 @@ import{useRouter} from 'next/router';
 import { pointOne, pointTwo, pointThree } from '../data/mapPoint_data';
 
 
-
 export const MapImg = styled.img`
 width: 450px;
 height: 400px;
@@ -21,37 +20,38 @@ export default function DisplayMap({
 }){
 
     const r = useRouter();
-    const {type} = r.query;
+    const {mappoint} = r.query;
 
     return <MapDiv><MapImg src={img}></MapImg>
     
     <MapPoint img = "/map-point.svg" left="-50px" top="-300px"
-    onClick={console.log("renata")} 
+    // onClick={console.log("renata")} 
     onClickPoint={
-        ()=>r.replace({
+        ()=>r.push({ //maybe push?
           pathname:"/donate",
           query:{
-            type:pointOne.route
+            mappoint:pointOne.route,
+            // type: type
           }
         })
         
       }></MapPoint>
       <MapPoint img = "/map-point.svg" left="0px" top="-150px"
     onClickPoint={
-        ()=>r.replace({
+        ()=>r.push({
           pathname:"/donate",
           query:{
-            type:pointTwo.route
+            mappoint:pointTwo.route
           }
         })
         
       }></MapPoint>
       <MapPoint img = "/map-point.svg" left="0px" top="-270px"
     onClickPoint={
-        ()=>r.replace({
+        ()=>r.push({
           pathname:"/donate",
           query:{
-            type:pointThree.route
+            mappoint:pointThree.route
           }
         })
         
@@ -59,6 +59,21 @@ export default function DisplayMap({
 
       </MapDiv>
 }
+
+
+{/* <ChangePage onClick={()=>r.replace({
+  pathname:"/rules",
+  query:{
+    type:type
+  }
+})
+}>Fridge Donation Rules</ChangePage>
+
+query: type;
+mappoint: loc1; */}
+
+
+
 
 
 //     return <FoodList>
