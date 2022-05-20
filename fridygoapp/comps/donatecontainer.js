@@ -71,14 +71,25 @@ export const CenteredButtonDivs = styled.div`
 export const ChangePage = styled.button`
     font-size: 16px;
     color: white;
-    background-color: #ED9251;
+    background-color: ${props=>props.bg || "#ED9251"};
     font-weight: 700;
     border-radius: 10px;
     border:0;
     width: 160px;
     height: 65px;
-    margin:0px 20px;
-    padding:10px
+    margin:5px 20px;
+    padding:10px;
+    top: ${props=>props.top || "nones"};
+    position:${props=>props.position || "nones"};
+    
 `;
-
+export const HomePage = styled.div`
+  background-image: url("/homepagebackground.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom:30px;
+  min-height:100vh
+`
 

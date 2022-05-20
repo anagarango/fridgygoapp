@@ -20,7 +20,7 @@ export default function HomeButton(){
   const r = useRouter();
    return <Gohomebutton src="/homebutton.png" onClick={
         ()=>r.replace({
-          pathname:"/contact",
+          pathname:"/",
           // query:{
           //   page:1,
           // }
