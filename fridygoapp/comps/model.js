@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import "fridygoapp/styles/global.css"
+import {burn, burnImgs} from '../data/food_data'
 
 export default function Modal() {
   const [modal, setModal] = useState(false);
@@ -13,12 +14,14 @@ export default function Modal() {
 //   } else {
 //     document.body.classList.remove('active-modal')
   
-
+// src={burn[burnImgs[0]].img}
   return (
     <>
-      <button onClick={toggleModal} className="btn-modal">
-        Open
-      </button>
+      {/* <button><img src= {burn[burnImgs[0]]} onClick={toggleModal} className="btn-modal">
+       
+      </img></button> */}
+
+        <button onClick={toggleModal} className="btn-modal"> </button> 
 
       {modal && (
         <div className="modal">
@@ -29,13 +32,12 @@ export default function Modal() {
             <p>
               3
             </p>
-            <h4>How Long it Can Last</h4>
+            <h4>How Long it Can Last?</h4>
             <p>
-              L88888orem ipsum dolor sit amet consectetur adipisicing elit. Provident
-              perferendis suscipit officia recusandae, eveniet quaerat assumenda
+              In our fridges we try to stick with the store shell recomended experation date as best as we can!
             </p>
             <button className="close-modal" onClick={toggleModal}>
-              CLOSE
+              X
             </button>
           </div>
         </div>

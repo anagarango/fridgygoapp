@@ -36,6 +36,7 @@ export default function DonatePage(){
                 <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-643-9172</NormalText><br/>
                 <BoldNormalText>Needed Food Items:</BoldNormalText>
                 <FoodItemDisplay arr={burnImgs}></FoodItemDisplay> 
+
                 <Modal></Modal>
 
                 </CenteredDiv>

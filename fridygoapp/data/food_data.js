@@ -1,3 +1,5 @@
+import{ FoodIteam,FoodItemDisplay} from '/comps/food_item';
+
 export const header = "Choose a Category"
 
 export const burn = {
@@ -56,3 +58,22 @@ export const surrImgs = [
   "Potatoes",
   "Cheese"
 ];
+
+
+
+// export default function FoodB({arr=[]}){
+
+//   return <FoodB>
+//     {
+//       arr.map((o,i)=> img= {o}> <FoodItemDisplay arr={burnImgs}>
+//          <FoodIteam>
+//          {/* <img src={burnImgs[0]} height={100} width={100}></img>  */}
+//          <img src={burn[burnImgs[0]].img}/>
+
+//          </FoodIteam>
+//         </FoodItemDisplay>
+//         )
+//     }
+    
+//   </FoodB>
+// }
