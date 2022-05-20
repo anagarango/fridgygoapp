@@ -9,7 +9,8 @@ function MyApp({ Component, pageProps, router }) {
       width:"100vw",
       left: "-100vw",
       // opacity:0,
-      animation: "slide-in"
+      animation: "slide-in",
+      transform: "skew(25deg)"
 
     },
     pageAnimate: {
@@ -17,7 +18,8 @@ function MyApp({ Component, pageProps, router }) {
       width:"100vw",
       left:0,
       // opacity:1,
-      animation: "slide-in"
+      animation: "slide-in",
+      transform: "skew(0deg)"
     },
 
     pageExit: {
@@ -25,7 +27,8 @@ function MyApp({ Component, pageProps, router }) {
       width:"100vw",
       left:"100vw",
       // opacity:1,
-      animation: "slide-in"
+      animation: "slide-in",
+      transform: "skew(0deg)"
     }
   }}>
   <Component {...pageProps} />
