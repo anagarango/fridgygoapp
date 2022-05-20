@@ -28,13 +28,13 @@ export default function ContactPage(){
               <CreatorName txt={ren.title} img={ren.img}></CreatorName>
               <CreatorName txt={eli.title} img={eli.img}></CreatorName>
               {/* <GoBack text="TRYING TO MAKE THIS BUTTON WORK" move="/pickarea"></GoBack> */}
-              <ChangePage src="/homebutton.png" onClick={()=>r.replace({
+              {/* <ChangePage src="/homebutton.png" onClick={()=>r.replace({
                     pathname:"/pickarea",
                     query:{
                       page:1,
                     }
                   })
-                }>Pick Area</ChangePage>
+                }>Pick Area</ChangePage> */}
             </FoodContainerContact>
           </WholePage>
 }

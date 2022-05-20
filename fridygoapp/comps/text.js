@@ -63,3 +63,9 @@ export const BoxedContentButtons = styled.h3`
     align-items:center;
     color: #723800;
 `;
+
+export const HomePageTitle = styled.h1`
+    text-align: center;
+    color: #ffff;
+    margin: 90px 0px
+`
