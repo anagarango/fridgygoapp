@@ -69,7 +69,7 @@ export const CenteredButtonDivs = styled.div`
   margin-top:20px
 `;
 export const ChangePage = styled.button`
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     background-color: #ED9251;
     font-weight: 700;

@@ -9,3 +9,7 @@ export const pointTwo ={
 export const pointThree ={
     route: "loc3",
 }
+
+export const pointFour ={
+    route: "loc4",
+}

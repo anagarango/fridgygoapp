@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import MapPoint from './mappoint';
 import { useRouter } from 'next/router';
-import { pointOne, pointTwo, pointThree } from '../data/mapPoint_data';
+import { pointOne, pointTwo, pointThree, pointFour } from '../data/mapPoint_data';
 
 
 export const MapImg = styled.img`
@@ -17,7 +17,7 @@ height: 410px;
 `
 
 
-export default function DisplayMap({
+export default function DisplaySecondMap({
   img = "/mapImage.png",
 }) {
 
@@ -25,11 +25,9 @@ export default function DisplayMap({
   const query = r.query;
   const { mappoint, type } = r.query;
 
-
-
   return <MapDiv><MapImg src={img}></MapImg>
 
-    <MapPoint img="/map-point.svg" left="-30px" top="-300px"
+    <MapPoint img="/map-point.svg" left="10px" top="-280px"
       // onClick={console.log("renata")} 
       onClickPoint={
         () => r.push({ 
@@ -53,7 +51,7 @@ export default function DisplayMap({
         })
 
       }></MapPoint>
-    <MapPoint img="/map-point.svg" left="0px" top="-270px"
+    <MapPoint img="/map-point.svg" left="0px" top="-300px"
       onClickPoint={
         () => r.push({
           pathname: "/donate",
@@ -62,21 +60,21 @@ export default function DisplayMap({
             mappoint: pointThree.route
           }
         })
+      }></MapPoint>
+
+    <MapPoint img="/map-point.svg" left="-30px" top="-450px"
+      onClickPoint={
+        () => r.push({
+          pathname: "/donate",
+          query: {
+            type: type,
+            mappoint: pointFour.route
+          }
+        })
 
       }></MapPoint>
 
   </MapDiv>
+
 }
-
-
-{/* <ChangePage onClick={()=>r.replace({
-  pathname:"/rules",
-  query:{
-    type:type
-  }
-})
-}>Fridge Donation Rules</ChangePage>
-
-query: type;
-mappoint: loc1; */}
 
