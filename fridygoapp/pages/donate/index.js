@@ -12,6 +12,8 @@ import { burnImgs, dtvanImgs, richmImgs, surrImgs, burnFoodNames} from '../../da
 import { CenteredButtonDivs, ChangePage, CenteredDiv, CenteredDivDonate , FoodContainerDonate, WholePage } from '../../comps/donatecontainer'
 import DisplayThirdMap from '../../comps/mapThree';
 
+import Modal from  '/comps/model';
+
 export default function DonatePage(){
   const r = useRouter();
 
@@ -33,7 +35,9 @@ export default function DonatePage(){
                 <BoldNormalText>Location:</BoldNormalText><NormalText>729 Nanaimo Ave, Burnaby</NormalText><br/>
                 <BoldNormalText>Phone Number:</BoldNormalText><NormalText>1-250-643-9172</NormalText><br/>
                 <BoldNormalText>Needed Food Items:</BoldNormalText>
-                <FoodItemDisplay arr={burnImgs}></FoodItemDisplay>
+                <FoodItemDisplay arr={burnImgs}></FoodItemDisplay> 
+                <Modal></Modal>
+
                 </CenteredDiv>
               }
               
@@ -245,5 +249,3 @@ if value1 can be used, then use it, otherwise use value2
 //  <p class="donatetext"><span class="steps">Step 2:</span> See the container below the map to see what items are needed for the fridge</p>
 //  <p class="donatetext"><span class="steps">Step 3:</span> Check our rules below to review our list of accepted and non-accepted items</p>
 //  <p class="donatetext"><span class="steps">Step 4:</span> Donate the needed item to the fridge in person</p>
-
-
