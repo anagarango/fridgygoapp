@@ -4,7 +4,7 @@ import{useRouter} from 'next/router';
 
 import {ChangePage, HomePage } from '/comps/donatecontainer';
 
-export default function ContactPage(){
+export default function HomePage(){
     const r = useRouter();
     
 

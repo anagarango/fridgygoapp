@@ -4,9 +4,13 @@ import FoodItemDisplay, {MapButtons} from '../../comps/food_item';
 import {burn, dtvan, richm, surr} from '../../data/food_data';
 import HomeButton from '../../comps/homebutton';
 import { WholePage, FoodContainer, ButtonContainer } from '../../comps/donatecontainer';
+import {BrowserRouter as Router} from "react-router-dom";
+import AnimatedRoutes from '../../comps/animatedroutes';
 
 
-export default function DonatePage(){
+
+
+export default function PickArea(){
     const r = useRouter();
     const {type} = r.query;
   
@@ -15,7 +19,9 @@ export default function DonatePage(){
       <PageHeader>Donate</PageHeader>
           <FoodContainer>
             <SecondPageHeader>Choose A Location</SecondPageHeader>
+            {/* <Router> */}
             <ButtonContainer>
+              {/* <AnimatedRoutes></AnimatedRoutes> */}
               <MapButtons src={burn.img} onClick={
                 ()=>r.push({
                   pathname:"/donate",
@@ -45,6 +51,7 @@ export default function DonatePage(){
                 })
               }>
               </MapButtons>
+
               <MapButtons src={surr.img} onClick={
                 ()=>r.replace({
                   pathname:"/donate",
@@ -55,7 +62,7 @@ export default function DonatePage(){
               }>
               </MapButtons>
             </ButtonContainer>
-  
+              {/* </Router> */}
             {type === 'bur' && <div>
               Burnaby Food Items
               <FoodItemDisplay arr={burnImgs} names={burnImgs}></FoodItemDisplay>

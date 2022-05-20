@@ -1,4 +1,4 @@
-import {PageHeader, SecondPageHeader, NormalText} from '../../comps/text'; 
+ import {PageHeader, SecondPageHeader, NormalText} from '../../comps/text'; 
 import CreatorName, { FoodBankInfo, ImageContact } from '../../comps/creatorname';
 import{useRouter} from 'next/router';
 import {ana, ren, eli, organizationloc, orfbname, orfbnum, orfbaddress, orfbnumlink} from '../../data/creator_data';
