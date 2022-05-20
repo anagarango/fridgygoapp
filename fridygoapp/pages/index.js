@@ -9,7 +9,7 @@ export default function ContactPage(){
     
 
     return <HomePage>
-            <HomePageTitle>Welcome to <br>cool</br> FridgyGo</HomePageTitle>
+            <HomePageTitle>Welcome to <br></br> FridgyGo</HomePageTitle>
             
             {/* <Bird></Bird> */}
           
