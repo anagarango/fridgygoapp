@@ -40,6 +40,7 @@ export const dtvanImgs = [
   "Milk"
 ];
 
+// dtvanIngs[0].onclick
 export const richmImgs = [
   "Oranges",
   "Apples",
