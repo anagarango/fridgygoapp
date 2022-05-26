@@ -4,7 +4,7 @@ export const accepted = {
     message:"Foods we happily accept to feed our communities!"
   };
   export const notaccepted = {
-    title:"Not Accepted ❌",
+    title:"Not Accepted",
     route:"not",
     message:"Foods that we don't accept in our fridges for safety reasons"
   };

@@ -9,6 +9,15 @@ export const MapImg = styled.img`
 // height: 400px;
 width: 80%;
 padding: 25px 12px 10px 12px;
+animation: fadeIn 5s;
+-webkit-animation: fadeIn 5s;
+-moz-animation: fadeIn 5s;
+-o-animation: fadeIn 5s;
+-ms-animation: fadeIn 5s;
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 `
 export const MapDiv = styled.div`
 width: 460px;

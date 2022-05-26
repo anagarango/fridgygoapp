@@ -47,7 +47,7 @@ export default function HowitworksPage(){
       {type === 0 &&
       <div class = "divforHIW">
       <HeaderContain><FifthPageHeader>How it works?</FifthPageHeader></HeaderContain>
-      <div><DivForImg><WhiteText width = "200px" left="220px" top="250px">What are community fridges?</WhiteText></DivForImg></div>
+      <div><DivForImg width="420px"><WhiteText width = "200px" left="220px" top="250px">What are community fridges?</WhiteText></DivForImg></div>
       <NormalText>A community fridge is a refrigerator (colloquially "fridge") located in a public space. </NormalText>
       <NormalText>The main aim of community fridges is to reduce food insecurity, while also mitigating food waste. They enable people facing hardship to have easy access to fresh, nutritious food.</NormalText>
       <NextStepButton onClick = {
@@ -65,7 +65,7 @@ export default function HowitworksPage(){
       <div class = "divforHIW">
       <HeaderContain><FifthPageHeader weight="800px" size="38px">1. Pick a location of your choice</FifthPageHeader></HeaderContain>
       <DivForImg b_img="url(/map_forHIW.png)" width = "300px" height = "150px"></DivForImg>
-      <DivForImg b_img="url(/hand.svg)" width = "300px" height = "250px" position = "relative" top = "-100px" left = "60px"></DivForImg>
+      <DivForImg b_img="url(/hand.svg)" width = "300px" height = "250px" position = "relative" top = "-100px" left = "60px" animname="slidein" duration="3s"></DivForImg>
 
       <NextStepButton color="#5B3713" backgroundColor = "#F8E0C9" width = "240px" onClick = {
           ()=>r.push({
@@ -90,7 +90,7 @@ export default function HowitworksPage(){
       {type === 2 &&
       <div class = "divforHIW">
       <HeaderContain><FifthPageHeader weight="800px" size="38px">2. Check what items are needed in the fridge</FifthPageHeader></HeaderContain>
-      <DivForImg b_img="url(/fooditems.png)" width = "470px" height = "130px"></DivForImg>
+      <DivForImg b_img="url(/fooditems.png)" width = "420px" height = "130px" animname="slidein" duration="3s"></DivForImg>
       {/* <FoodItemDisplay arr={burnImgs}></FoodItemDisplay> */}
 
       <NextStepButton color="#5B3713" backgroundColor = "#F8E0C9" width = "240px" onClick = {
@@ -139,7 +139,7 @@ export default function HowitworksPage(){
       {type === 4 &&
       <div class = "divforHIW">
       <HeaderContain><FifthPageHeader weight="800px" size="38px">4. Bring donated items to the fridge of your choice</FifthPageHeader></HeaderContain>
-      <DivForImg b_img="url(/correct.png)" width = "300px" height = "300px"></DivForImg>
+      <DivForImg b_img="url(/correct.png)" width = "300px" height = "300px" animname="slidein" duration="3s"></DivForImg>
       <NextStepButton onClick = {
           ()=>r.push({
               pathname:"/pickarea",

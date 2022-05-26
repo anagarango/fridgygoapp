@@ -12,8 +12,14 @@ export const WholePage = styled.div`
 export const FoodContainer = styled.div`
   width:85%;
   padding:20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  // background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    animation: fadebackground 9s infinite;
+  @keyframes fadebackground {
+    from {background-color: rgba(255, 255, 255, 0.9)}
+    to {background-color: #F1AE7E}
+  }
 `;
 
 export const FoodContainerDonate = styled.div`

@@ -14,6 +14,18 @@ background-size: cover;
 position: ${props=>props.position || "static"};
 left: ${props=>props.left || "0px"};
 top: ${props=>props.top || "0px"};
+    animation-duration: ${props=>props.duration};
+    animation-name: ${props=>props.animname};
+  
+  @keyframes slidein {
+    from {
+      margin-top: 100%;
+    }
+  
+    to {
+      margin-top: 0%;
+    }
+  }
 `
 
 // export default function JustforImg({
